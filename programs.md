@@ -1,6 +1,6 @@
 # Programs
 
-Computers are dumb. Sure, they can do some things that us mere humans
+Computers are dumb. Sure, they can do some things that we mere humans
 can barely understand. For example, they can multiply the numbers
 159374930 and 43849593 faster than you can read the answer. They can
 perfectly remember the words in millions of books, while we humans can
@@ -35,16 +35,18 @@ The answer is _programs_.
 
 Computers only understand machine code. Programs are a bunch of
 machine code that tell the computer to do something more intelligent,
-usually to make it easier for a human to interact with it. For
-example, asking the computer to add 5 and 7 is difficult with machine
-code. However, I bet you can open up a calculator on your computer
-right now, click on "5", then "+", then "7", then "=", and get an
-answer (though I also hope you can do that math _without_ a computer).
+usually to make it easier for a human to _interact_ with it. By
+interact, I mean communicate with the computer. For example, asking
+the computer to add 5 and 7 is difficult with machine code. However, I
+bet you can open up a calculator on your computer right now, click on
+"5", then "+", then "7", then "=", and get an answer (though I also
+hope you can do that math _without_ a computer).
 
 That calculator you opened isn't magic. It's a program. It provides an
 _interface_ to humans to be able to tell your computer what to do. In
 this case, the interface is a bunch of buttons on the screen you can
-click with your mouse.
+click with your mouse. An interface provides a human a way to
+communicate with the computer.
 
 I'm guessing you're reading this on a web page right now. You view web
 pages in a program called a _web browser_, like Firefox or
@@ -66,7 +68,7 @@ clicking on things. This still isn't machine code; you're still
 interacting with a program, which is translating what you're saying to
 the computer. But let's go ahead and do some of this now.
 
-__NOTE__ These instructions are intended for Linux and Mac users, it
+__NOTE__ These instructions are intended for Linux and Mac users. They
 probably won't work on Windows.
 
 Your computer has a program called a _terminal_, which will provide a
@@ -81,8 +83,11 @@ something like this:
 
 Your terminal is running another program inside of it already, called
 a _shell_. The shell speaks its own language which is sort of like
-English, but not quite. Try typing in the following and then hit
-enter:
+English, but not quite. You communicate with the shell by typing in
+commands and hitting enter. This is also known as the shell's
+_input_. The shell communicates back with you by putting things on the
+screen. This is also known as the shell's _output_. To demonstrate,
+try typing in the following and then hit enter:
 
     echo Hello World
 
@@ -124,6 +129,9 @@ some things that are difficult or impossible from a graphical
 interface. If you only ever use a graphical interface, you're limiting
 what you will be able to accomplish. And when it comes to programming,
 many things are much easier to do with the text interface.
+
+__Exercise__ Type in `bake a cake`. What happens? Why do you think
+that happens?
 
 ## Silly calculator
 
