@@ -127,3 +127,42 @@ interfaces gráficas estas limitando todo lo que puedes lograr. Y cuando se trat
 de programar, muchas cosas son mucho más sencillas usando una interfaz textual.
 
 __Ejericio__ Escribe `hacer un pastel`. ¿Qué ocurre? ¿Por qué crees que ocurrió?
+
+## Calculadora Boba
+
+Nuestra shell también puede hacer algo de _magia_. Por ejemplo, puedes usarla
+como una pequeña calculadora. Intenta escribir lo siguiente:
+
+    echo $((5 + 3))
+
+Excelente, ya tienes una calculadora basada en texto! Resulta que la shell es
+mucho más de lo que te he dicho hasta ahora; Es un _lenguaje de programación_
+completo. Un lenguaje de programación es un lenguaje que te permite escribir tus
+propios programas. Lo que es genial sobre la shell es que puedes escribir
+programas muy sencillos directamente en la terminal, como nuestra mini
+calculadora.
+
+Existen muchísimos lenguajes de programación diferentes. Quizás has escuchado de
+algunos de ellos: Javascript, C++, Python y Ruby. Probablemente te estés
+preguntando por que existen tantos lenguajes de programación en lugar de
+solamente uno. Déjame preguntarte algo a _ti_: ¿Por qué existen tantos idiomas
+humanos, como Inglés, Francés, Español, Japonés y Ruso? Resulta que hay muchas
+razones para esto. Cada lenguaje de programación hace las cosas un poco
+diferente.
+
+En esta guia mágica hablaremos de un lenguaje de programación llamado Haskell.
+Como este será el primer lenguaje que aprendas, no te diré que es lo que lo hace
+diferente de los demás lenguajes por que sería confuso. Luego de que hayas
+aprendido Haskell, puedes aprender otros lenguajes para ver en que se
+diferencian, de la misma forma que cuando sabes Español puedes aprender Hebreo
+y ver como se diferencian (es extraño! Las letras van de derecha a izquierda en
+lugar de izquierda a derecha!).
+
+Te había dicho que puedes escribir pequeños programas en la terminal usando la
+shell. Pero si quieres escribir programas reales, probablemente no quieras
+escribir el programa entero en la terminal cada ves que quieras usarlo. En lugar
+de eso, podemos escribir los programas en archivos. Lo que nos lleva a la
+siguiente sección...
+
+__Ejericio__ ¿Puedes hacer que la terminal te diga cuanto es 43 multiplicado por
+22?
