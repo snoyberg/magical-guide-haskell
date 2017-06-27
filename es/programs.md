@@ -15,7 +15,7 @@ y traer el pan a casa luego de comprarlo. Una computadora necesitaría
 instrucciones de talladas de cada uno de esos pasos.
 
 Para hacerlo aún peor, las computadoras no pueden hablar Español, no pueden
-hablar Ingles ni pueden hablar _ningún_ lenguaje humano. Las computadoras hablan
+hablar Inglés ni pueden hablar _ningún_ lenguaje humano. Las computadoras hablan
 algo llamado código maquina, que no es más que un montón de unos y ceros
 (también conocido como _binario_). El código maquina hace cosas aburridas como
 "sumar dos números" o "cargar información desde la memoria". Además, a nosotros
@@ -59,3 +59,71 @@ podemos ver y usar.
 Estos programas son _interfaces gráficas de usuario_. Tu (el humano) eres el
 usuario. El programa provee una interfaz, algo con lo que puedes interactuar. Y
 además es gráfica: con colores, ventanas, botones, etc.
+
+## Interfaz Textual
+
+Antes de que existieran las interfaces gráficas, habían interfaces de _texto_.
+Estas te permiten escribir comandos como palabras en lugar de hacer click en
+botones. Estas interfaces no son código máquina; aún estas interactuando con un
+programa que traduce lo que le dices a la computadora. Hagamos algo de esto
+ahora mismo.
+
+__NOTA__ Estas instrucciones están pensadas para usuarios Linux y Mac.
+Probablemente no funcionarán en Windows.
+
+Tu computadora tiene un programa llamado _terminal_, que provee una ventana
+donde puedes ejecutar programas basados en texto. Abre la terminal ahora (pide
+ayuda a alguien si lo necesitas). En una computadora con Linux, puedes hacer
+esto presionando las teclas CTRL y ALT en el teclado y al mismo tiempo presiona
+la letra `T` (como en Terminal). En Mac, presiona la tecla "control" y presiona
+la barra espaciadora, escribe "terminal", y presiona "enter". Debería tener un
+aspecto similar a este:
+
+![Terminal](images/terminal.png)
+
+Tu terminal está ejecutando otro programa dentro llamado la _shell_. La shell
+habla su propio lenguaje que se parece mucho al Inglés. Para comunicarte con la
+shell debes escribir comandos y presionar enter. Esto se conoce como la
+_entrada_ de la shell. La shell se comunica contigo poniendo cosas en la
+pantalla. Esto se conoce como la _salida_ de la shell. Para demostrarlo intenta
+escribir lo siguiente y luego presiona enter:
+
+    echo Hola Mundo
+
+La shell debería decir "Hola Mundo" (En Inglés `echo` significa "eco", así que
+le estas pidiendo a la shell que haga eco de lo que le escribes). Deberás ver
+algo así:
+
+![Shell Hola Mundo](images/shell-hello-world.png)
+
+La shell funciona de la siguiente manera: la primera palabra que escribes es un
+_comando_, como `echo`, y el resto de las palabras son los _argumetnos_, como
+"Hola" y "Mundo". Le dijiste a la shell que "ejecute el comando `echo`, y dale
+los argumentos `Hola` y `Mundo`." La shell responde ejecutando el programa de
+textual llamado `echo` con los argumentos `Hola` y `Mundo`. El código máquina
+del programa `echo` sabe que debería imprimir esas palabras en la pantalla.
+
+Quieres intentar con otro comando? Intenta escribir `date`. Debería darte la
+fecha y hora actual. Espera unos segundos y ejecútalo otra vez, notarás que el
+resultado es ligeramente diferente.
+
+Incluso puedes descargar páginas web en la terminal. Quieres ir a *YouTube*?
+Intenta escribir `curl https://www.youtube.com`. Esto no se verá igual a lo que
+estás acostumbrado, son solamente un montón de letras, números y símbolos raros.
+Así es como la página web luce por dentro, el navegador web convierte todo eso
+en algo que es más fácil de ver y usar.
+
+__Pregunta__ ¿Qué programa ejecutaste para ver YouTube? ¿Qué argumentos le diste
+a ese programa?
+
+¿Por qué nos interesan estas interfaces basadas en texto si hoy en día tenemos
+interfaces gráficas? ¿Por qué ejecutar `date` si tu computadora ya puede
+mostrarte la fecha? ¿Qué uso puede tener `echo`? Y ¿Por qué descargaría una
+página web de esa forma si podría ver el vídeo en mi navegador web?
+
+La respuesta es que la shell es muy poderosa, nos permite hacer ciertas cosas
+que son difíciles o imposibles desde una interfaz gráfica. Si solamente usas
+interfaces gráficas estas limitando todo lo que puedes lograr. Y cuando se trata
+de programar, muchas cosas son mucho más sencillas usando una interfaz textual.
+
+__Ejericio__ Escribe `hacer un pastel`. ¿Qué ocurre? ¿Por qué crees que ocurrió?
