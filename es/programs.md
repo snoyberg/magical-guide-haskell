@@ -15,7 +15,7 @@ y traer el pan a casa luego de comprarlo. Una computadora necesitaría
 instrucciones de talladas de cada uno de esos pasos.
 
 Para hacerlo aún peor, las computadoras no pueden hablar Español, no pueden
-hablar Ingles ni pueden hablar ningún lenguaje humano. Las computadoras hablan
+hablar Ingles ni pueden hablar _ningún_ lenguaje humano. Las computadoras hablan
 algo llamado código maquina, que no es más que un montón de unos y ceros
 (también conocido como _binario_). El código maquina hace cosas aburridas como
 "sumar dos números" o "cargar información desde la memoria". Además, a nosotros
@@ -30,3 +30,32 @@ puedes jugar o ver una película. Cómo pueden las computadoras hacer estas cosa
 aparentemente inteligentes en lugar de simplemente hacer matemáticas?
 
 La respuesta es con _programas_.
+
+## ¿Qué es un programa?
+
+Las computadoras solamente comprenden código máquina. Los programas son un
+montón de código máquina que le indica a la computadora hacer algo más
+inteligente, usualmente para hacer que el humano pueda _interactuar_ más
+fácilmente. Cuando digo "interactuar", me refiero a comunicarse con la
+computadora.  Por ejemplo, pedir a la computadora sumar 5 y 7 es difícil de
+hacer con código máquina. Sin embargo, estoy seguro que puedes abrir la
+calculadora en tu computadora ahora mismo, hacer click en "5", luego en "+",
+luego en "7" y finalmente en "=" para obtener el resultado (Aunque también
+espero que puedas hacer ese calculo _sin_ una computadora).
+
+La calculadora que abriste no es mágica, es un programa que proporciona una
+_interfaz_ para que los humanos puedan decir a la computadora que hacer. En este
+caso, la interfaz es un montón de botones en la pantalla donde puedes hacer
+click con el ratón. Una interfaz le da al humano una forma de comunicarse con la
+computadora.
+
+Supongo que estás leyendo esto en  una página web. El programa que te permite
+ver páginas web se llama _navegador web_, como Firefox o Chrome. Estos son
+programas que le dicen a la computadora que hacer. Lo que hacen estos programas
+es enviar mensajes a computadoras que se encuentran en todo el mundo pidiendo
+páginas web, luego convierten esas páginas web en texto y colores que tu y yo
+podemos ver y usar.
+
+Estos programas son _interfaces gráficas de usuario_. Tu (el humano) eres el
+usuario. El programa provee una interfaz, algo con lo que puedes interactuar. Y
+además es gráfica: con colores, ventanas, botones, etc.
