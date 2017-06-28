@@ -1,4 +1,5 @@
 PNGS= laptop.png \
+	  haskell-logo.png \
 
 make: $(PNGS)
 
