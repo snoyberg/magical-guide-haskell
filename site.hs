@@ -7,7 +7,11 @@ import           Hakyll
 --------------------------------------------------------------------------------
 main :: IO ()
 main = hakyll $ do
-    match (fromList ["images/*", "artwork/*.png"]) $ do
+    match "images/*" $ do
+        route   idRoute
+        compile copyFileCompiler
+
+    match "artwork/*.png" $ do
         route   idRoute
         compile copyFileCompiler
 
@@ -15,19 +19,23 @@ main = hakyll $ do
         route   idRoute
         compile compressCssCompiler
 
-    match "lessons/*" $ do
+    match "bower_components/**" $ do
+        route   idRoute
+        compile copyFileCompiler
+
+    match "lessons/**" $ do
         route $ setExtension "html"
         compile $ pandocCompiler
-            >>= loadAndApplyTemplate "templates/post.html"    postCtx
-            >>= loadAndApplyTemplate "templates/default.html" postCtx
+            >>= loadAndApplyTemplate "templates/post.html"    defaultContext
+            >>= loadAndApplyTemplate "templates/default.html" defaultContext
             >>= relativizeUrls
 
     match "index.html" $ do
         route idRoute
         compile $ do
-            posts <- recentFirst =<< loadAll "posts/*"
+            posts <- recentFirst =<< loadAll "lessons/**"
             let indexCtx =
-                    listField "posts" postCtx (return posts) `mappend`
+                    listField "posts" defaultContext (return posts) `mappend`
                     constField "title" "Home"                `mappend`
                     defaultContext
 
@@ -37,10 +45,3 @@ main = hakyll $ do
                 >>= relativizeUrls
 
     match "templates/*" $ compile templateBodyCompiler
-
-
---------------------------------------------------------------------------------
-postCtx :: Context String
-postCtx =
-    dateField "date" "%B %e, %Y" `mappend`
-    defaultContext

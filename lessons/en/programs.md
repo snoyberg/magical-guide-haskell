@@ -1,3 +1,9 @@
+---
+date: 2017-06-28
+title: Programs
+date: 2017-06-28
+...
+
 # Programs
 
 Computers are dumb. Sure, they can do some things that we mere humans

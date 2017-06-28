@@ -1,3 +1,8 @@
+---
+title: Files and Directories
+date: 2017-06-28
+...
+
 # Files and directories
 
 Your computer has to remember a lot of things. All of those programs

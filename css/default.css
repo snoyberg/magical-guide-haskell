@@ -2,8 +2,32 @@ body {
     color: black;
     font-size: 16px;
     margin: 0px auto 0px auto;
-    width: 600px;
+    width: 100%;
 }
+
+#banner {
+    padding-top: 50px;
+    background-color: #eee;
+}
+
+#mgh-title {
+    font-size: 5em;
+    text-align: center;
+    color: blue;
+}
+
+#laptop {
+    margin-left: 20px;
+    position: relative;
+    width: 100%;
+    top: 30px;
+}
+
+#main-content {
+    margin-top: 80px;
+}
+
+
 
 div#header {
     border-bottom: 2px solid black;
@@ -39,10 +63,6 @@ div#footer {
     margin-top: 30px;
     padding: 12px 0px 12px 0px;
     text-align: right;
-}
-
-h1 {
-    font-size: 24px;
 }
 
 h2 {
