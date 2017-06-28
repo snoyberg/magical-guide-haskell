@@ -7,4 +7,4 @@ make: $(PNGS)
 	inkscape -D $< -e $@
 
 clean:
-	rm *.png
+	rm $(PNGS)
