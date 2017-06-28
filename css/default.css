@@ -7,20 +7,22 @@ body {
 
 #banner {
     padding-top: 50px;
-    background-color: #eee;
+    background-color: #5f5286;
 }
 
 #mgh-title {
-    font-size: 5em;
+    margin-top: 50px;
+    color: white;
+    font-size: 6em;
+    font-weight: bold;
     text-align: center;
-    color: blue;
 }
 
 #laptop {
     margin-left: 20px;
     position: relative;
     width: 100%;
-    top: 30px;
+    top: 40px;
 }
 
 #main-content {
