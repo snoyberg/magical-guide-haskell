@@ -151,3 +151,49 @@ puede ejecutar directamente.
 
 No te preocupes mucho por esto ahora, míralo como si fuera magia, y
 eventualmente hablaremos sobre por que harías una cosa u otra.
+
+## Descarga Stack
+
+Muy bien, eso fue mucha información que no tiene mucho que ver con programar! El
+objetivo es que te sientas cómodo con la terminal, la shell, y creando archivos
+y directorios. Puedes jugar con la terminal todo lo que quieras. (__Nota para
+padres__ Es una buena idea usar una cuenta personal para el niño, para evitar
+que los ficheros sean borrados accidentalmente).
+
+Para nuestro paso final, vamos a conseguir los programas que necesitamos para
+escribir programas en Haskell. Hay varios que necesitaremos. Pero por
+ahora vamos a empezar con solamente uno, Stack, que es una herramienta que
+descarga todo lo que necesitas, y te ayuda a ejecutar tus programas.
+
+Puedes instalar Stack ejecutando este comando. Puedes intentar copiándolo y
+pingado lo en tu terminal, o escribirlo a mano. También necesitaras pedir a un
+adulto que escriba la contraseña de la computadora:
+
+    curl -sSL https://get.haskellstack.org/ | sh
+
+Si quieres saber más sobre Stack puedes ver la [Página para empezar con
+haskell](https://haskell-lang.org/get-started). Para asegurarte que Stack se
+descargó correctamente, ejecuta esto:
+
+    Michaels-MBP-3:~ michael$ stack --version
+    Version 1.4.1, Git revision 45e2ba52a08b235ef1a6421e73bbbe7255014796 (4759 commits) x86_64 hpack-0.17.0
+
+Es posible que veas algo un poco diferente. El argumento `--version` del
+programa `stack` significa "Dime cual es tu numero de versión". Muchos programas
+aceptan algunas _banderas_ especiales como `--version`. Otro muy común es
+`--help`, que te permite obtener ayuda sobre el uso de un programa. Intenta
+pedirle a Stack información de ayuda usando esa bandera.
+
+Stack aún necesita descargar algo llamado GHC (El compilador Glasgow de
+Haskell), que es el que hará todo el trabajo real. Puedes pedirle que haga eso
+ahora (probablemente tome algo de tiempo, así que es un buen momento para
+terminar esta lección). Ejecuta:
+
+    Michaels-MBP-3:~ michael$ stack setup --resolver lts-8.12
+
+El argumento `setup` le pide a Stack que "configure todo lo que necesitamos para
+empezar a trabajar". Verás la bandera `--resolver lts-8.12` varias veces. Por
+ahora, es solamente magia. :)
+
+Buen trabajo, ahora sabes mucho más sobre computadoras que la gran mayoría de
+adultos en todo el mundo.
