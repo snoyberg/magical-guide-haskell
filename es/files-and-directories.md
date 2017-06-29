@@ -114,3 +114,40 @@ El símbolo `>` significa "envía el resultado de este programa a este archivo".
         Hola Mundo
 
 Excelente, has creado un archivo!
+
+## Editor de Texto
+
+Sería muy irritante tener que escribir nuestros programas usando `echo` como
+acabamos de hacer. Cuando editamos archivos, generalmente usamos algún programa
+especialmente diseñado para hacerlo. Cuando creamos archivos de texto (como será
+el caso de nuestros programas), usamos un _editor de texto_. De igual forma que
+los lenguajes de programación, existen muchos editores de texto diferentes. Te
+voy a recomendar que uses un editor de texto con interfaz gráfica para que
+puedas usar el ratón para moverte en el archivo y hacer click en un botón para
+guardar. También existen editores para la terminal (como Vim o Emcas), pero
+queremos enfocarnos en aprender a programar, no como usar un editor de texto.
+
+__Ejericio__ Muy bien, aquí está el reto: Abre un editor de texto en tu
+computadora. Escribe las palabras `echo Hola Mundo`. Guárdalo dentro del
+directorio `magia` en un archivo llamado `hola.sh` (la extensión `.sh` significa
+que es un programa para la shell). Cuando lo hayas hecho, el archivo debería
+aparecer en el visor de archivos, y escribir `ls` en la terminal debería
+mostrarlo. Finalmente escribe `sh hola.sh` para pedirle al programa `sh` (shell)
+que ejecute tu programa `hola.sh`.
+
+Si hiciste todo eso, acabas de escribir tu primer programa completo. No hace
+mucho, pero ya es un avance! Además, ¿no te parece que es divertido como
+ejecutas tu programa? Le pides a un programa que ejecute otro programa. Esto
+tiene sentido si recuerdas lo que dije antes: estas escribiendo en un lenguaje
+de programación (shell) que la computadora no entiende, así que necesitas
+pedirle a _otro_ programa que lo traduzca.
+
+Esta forma de ejecutar programas se llama _interprete_, por que ejecutas un
+programa que interpreta tus comandos y se los envía a la computadora. Existe
+otra forma de ejecutar programas, llamada _compilación_, donde le pides a un
+programa llamado compilador que traduzca tu programa a lenguaje de máquina. El
+compilador te entrega un archivo con el código de máquina que tu computadora
+puede ejecutar directamente.
+
+No te preocupes mucho por esto ahora, míralo como si fuera magia, y
+eventualmente hablaremos sobre por que harías una cosa u otra.
