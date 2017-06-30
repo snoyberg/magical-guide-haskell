@@ -15,7 +15,7 @@ magic, at least in computers. Magic here means "we're not going to
 fully understand this yet, treat it as magic." The goal is to not get
 bogged down in overly confusing topics prematurely.
 
-* [Programs](programs.md)
-* [Files and Directories](files-and-directories.md)
+* [Programs](lessons/en/programs.md)
+* [Files and Directories](lessons/en/files-and-directories.md)
 
 <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png" /></a><br />This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License</a>.
