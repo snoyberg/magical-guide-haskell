@@ -85,7 +85,7 @@ pressing the `T` letter (for Terminal). On a Mac, hold "control" and
 press the spacebar, type "terminal", and hit "enter". It should look
 something like this:
 
-![Terminal](images/terminal.png)
+![Terminal](../../images/terminal.png)
 
 Your terminal is running another program inside of it already, called
 a _shell_. The shell speaks its own language which is sort of like
@@ -100,7 +100,7 @@ try typing in the following and then hit enter:
 The shell should say "Hello World" back to you (like an echo... get
 it?). It will look something like this:
 
-![Shell Hello World](images/shell-hello-world.png)
+![Shell Hello World](../../images/shell-hello-world.png)
 
 The way the shell works is that the first word you type in is a
 _command_, like `echo`, and the rest of the words are _arguments_,
