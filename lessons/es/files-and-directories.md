@@ -1,3 +1,8 @@
+---
+title: Archivos y Directorios
+date: 2017-06-28
+...
+
 # Archivos y Directorios
 
 Tu computadora tiene que recordar muchas cosas. Todos esos programas que ejecuta

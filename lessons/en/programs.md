@@ -1,5 +1,4 @@
 ---
-date: 2017-06-28
 title: Programs
 date: 2017-06-28
 ...

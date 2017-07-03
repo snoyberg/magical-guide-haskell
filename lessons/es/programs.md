@@ -1,3 +1,8 @@
+---
+title: Programas
+date: 2017-06-28
+...
+
 # Programas
 
 Las computadoras son tontas. Es verdad que pueden hacer algunas cosas que
