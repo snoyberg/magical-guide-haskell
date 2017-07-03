@@ -12,7 +12,7 @@ exactamente lo que les decimos y nada más. Si le pides a un humano "caminar
 hasta la tienda y comprar pan", el humano sabrá que necesita ponerse los
 zapados, tomar algo de dinero, mirar a ambos lados de la calle antes de cruzar,
 y traer el pan a casa luego de comprarlo. Una computadora necesitaría
-instrucciones de talladas de cada uno de esos pasos.
+instrucciones detalladas de cada uno de esos pasos.
 
 Para hacerlo aún peor, las computadoras no pueden hablar Español, no pueden
 hablar Inglés ni pueden hablar _ningún_ lenguaje humano. Las computadoras hablan
@@ -26,7 +26,7 @@ Pero tu has visto a tu computadora hacer cosas "inteligentes". Probablemente
 estás leyendo esto en tu computadora ahora mismo y no estás leyendo unos y
 ceros, estas leyendo esto como palabras en una página. Eres capaz de usar el
 ratón para moverte en la página, si te aburres de leer esto (no te culpo),
-puedes jugar o ver una película. Cómo pueden las computadoras hacer estas cosas
+puedes jugar o ver una película. ¿Cómo pueden las computadoras hacer estas cosas
 aparentemente inteligentes en lugar de simplemente hacer matemáticas?
 
 La respuesta es con _programas_.
@@ -46,8 +46,8 @@ espero que puedas hacer ese calculo _sin_ una computadora).
 La calculadora que abriste no es mágica, es un programa que proporciona una
 _interfaz_ para que los humanos puedan decir a la computadora que hacer. En este
 caso, la interfaz es un montón de botones en la pantalla donde puedes hacer
-click con el ratón. Una interfaz le da al humano una forma de comunicarse con la
-computadora.
+click con el ratón. Una interfaz le da al humano una forma de comunicarse e
+interactuar con la computadora.
 
 Supongo que estás leyendo esto en  una página web. El programa que te permite
 ver páginas web se llama _navegador web_, como Firefox o Chrome. Estos son
@@ -75,9 +75,9 @@ Tu computadora tiene un programa llamado _terminal_, que provee una ventana
 donde puedes ejecutar programas basados en texto. Abre la terminal ahora (pide
 ayuda a alguien si lo necesitas). En una computadora con Linux, puedes hacer
 esto presionando las teclas CTRL y ALT en el teclado y al mismo tiempo presiona
-la letra `T` (como en Terminal). En Mac, presiona la tecla "control" y presiona
-la barra espaciadora, escribe "terminal", y presiona "enter". Debería tener un
-aspecto similar a este:
+la letra `T` (la letra inicial de "Terminal"). En Mac, presiona la tecla
+"control" y presiona la barra espaciadora, escribe "terminal", y presiona
+"enter". Debería tener un aspecto similar a este:
 
 ![Terminal](images/terminal.png)
 
@@ -165,4 +165,4 @@ de eso, podemos escribir los programas en archivos. Lo que nos lleva a la
 siguiente sección...
 
 __Ejericio__ ¿Puedes hacer que la terminal te diga cuanto es 43 multiplicado por
-22?
+22? (puedes usar un _*_ como símbolo de multiplicación).
