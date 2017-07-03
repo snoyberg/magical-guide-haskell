@@ -29,11 +29,6 @@ directorio:
     Aplicaciones  Escritorio    Descargas  Libros     Musica     Publico
     Sonido        Documentos    Salud      Peliculas  Imagenes   dotfiles
 
-Usually when you do this in your terminal, directories will be a dark
-blue so you can tell them apart. You can move around to other
-directories with the command `cd` (change directory). For example, I
-can change into the `Documents` directory with:
-
 Por lo general cuando haces esto en tu terminal, los directorios tendrán otro
 color para poder diferenciarlos. Puedes moverte de un directorio a otro usando
 el comando `cd` (cambiar directorio). Por ejemplo, puedo entrar al directorio
@@ -85,7 +80,7 @@ comando `mkdir`, que significa "crear directorio".
     Michaels-MBP-3:Escritorio michael$ cd magia
 
 Intenta hacerlo tu mismo. Luego, intenta encontrar el directorio que creaste
-usando la interfaz gráfica. (Pida ayuda si la necesitas).
+usando la interfaz gráfica. (Pide ayuda con esto si lo necesitas).
 
 Muy bien, estamos listos para crear un archivo. Primero, vamos a crear un
 archivo vació usando el comando `touch`. Asegúrate de estar dentro del
