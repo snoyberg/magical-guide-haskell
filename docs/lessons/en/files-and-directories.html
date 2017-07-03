@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Magical Guide to Haskell</title>
+
+        <link rel="shortcut icon" type="image/png" href="../../img/favicon.png" />
+
+        <link rel="stylesheet" href="../../bower_components/bootstrap/dist/css/bootstrap.min.css" />
+        <link rel="stylesheet" href="../../css/default.css" />
+
+    </head>
+
+    <body>
+        <div id="content">
+            <div class="info">
+    Posted on 2017-06-28
+    
+</div>
+
+<h1 id="files-and-directories">Files and directories</h1>
+<p>Your computer has to remember a lot of things. All of those programs that it runs need to get put somewhere, right? And let’s say you’re working on a school project and hit the “save” button, it gets put somewhere, right? The answer to all of this is called <em>files</em> and <em>directories</em>. Directories are also known as <em>folders</em>.</p>
+<p>A file is something that has a name and has some stuff inside of it. Files get placed inside directories, which are kind of like trees where you can organized things. We can explore this a little bit inside the shell. For example, type in <code>pwd</code> and hit enter. <code>pwd</code> stands for “print working directory,” and it tells you what directory your shell is working in right now. On my computer, I see:</p>
+<pre><code>Michaels-MBP-3:~ michael$ pwd
+/Users/michael</code></pre>
+<p>The forward slashes (<code>/</code>) are separators: they tell you where each directory name stops and the next one begins. What this means is “There’s a directory at the top of my computer called <code>Users</code>. Inside that directory is another directory called <code>michael</code>. That’s the directory I’m inside right now.”</p>
+<p>We can also look at what files and folders exist in the current directory by using the <code>ls</code> command (list). For example, this is what my directory looks like:</p>
+<pre><code>Michaels-MBP-3:~ michael$ ls
+Applications  Desktop    Downloads  Library  Music     Public
+Audiobooks    Documents  Health     Movies   Pictures  dotfiles</code></pre>
+<p>Usually when you do this in your terminal, directories will be a dark blue so you can tell them apart. You can move around to other directories with the command <code>cd</code> (change directory). For example, I can change into the <code>Documents</code> directory with:</p>
+<pre><code>cd Documents</code></pre>
+<p><strong>Cool trick</strong> Programmers are really lazy, and we hate typing in whole words. In the shell, you can usually do something called <em>tab completion</em>, where you type the beginning of a word and then hit the “tab” key to complete it. On my computer, I can do <code>cd Doc</code> and then hit “tab” to get the command above.</p>
+<p>Take a guess what <code>pwd</code> will say now that I’m inside the <code>Documents</code> directory. Have you guessed? here’s what it looks like:</p>
+<pre><code>Michaels-MBP-3:Documents michael$ pwd
+/Users/michael/Documents</code></pre>
+<p>It’s just like <code>/Users/michael</code> before, but now it also has <code>Documents</code> at the end. We’ve gone deeper in our directory tree. I can also use <code>ls</code> here:</p>
+<pre><code>Michaels-MBP-3:Documents michael$ ls
+magical-guide-haskell</code></pre>
+<p>Huh, look at that! I’m working on this guide right now!</p>
+<p>Let’s say I’m bored with documents, and I want to go back up the tree to <code>/Users/michael</code>. I <em>could</em> type in <code>cd /Users/michael</code>. But there’s a nice shortcut for this: <code>cd ..</code> means “go up one directory.”</p>
+<pre><code>Michaels-MBP-3:Documents michael$ cd ..
+Michaels-MBP-3:~ michael$ pwd
+/Users/michael
+Michaels-MBP-3:~ michael$ ls
+Applications  Desktop    Downloads  Library  Music     Public
+Audiobooks    Documents  Health     Movies   Pictures  dotfiles</code></pre>
+<p>Let’s see how to create our own directory, which we’ll be doing some work in. So that it’s a bit easier to see, we’re going to do this on the desktop, so first I’ll do <code>cd Desktop</code>, and then use the <code>mkdir</code> command (make directory):</p>
+<pre><code>Michaels-MBP-3:~ michael$ cd Desktop/
+Michaels-MBP-3:Desktop michael$ mkdir magic
+Michaels-MBP-3:Desktop michael$ ls
+magic
+Michaels-MBP-3:Desktop michael$ cd magic</code></pre>
+<p>Let’s see if you can do this as well. Then, try to find the directory you just created using your file viewer in the graphical user interface again. (Ask for help if you need it.)</p>
+<p>OK, now we’re finally going to create a file. First, let’s create an empty file using the <code>touch</code> command. Make sure you’re inside the <code>magic</code> directory you just created (use <code>pwd</code> to check, and <code>cd</code> to change if you need to). Then run:</p>
+<pre><code>Michaels-MBP-3:magic michael$ touch hello.txt
+Michaels-MBP-3:magic michael$ ls
+hello.txt</code></pre>
+<p>I put the <code>.txt</code> at the end as a <em>file extension</em> that helps us know that this is a plain text file. But that file is kind of boring, it would be cool if it had something in it. We can do that with <code>echo</code>:</p>
+<pre><code>Michaels-MBP-3:magic michael$ echo Hello World &gt; hello.txt</code></pre>
+<p>The <code>&gt;</code> here says “send the output from this program to this file.” But how do we know it worked? Well, try two different things:</p>
+<ol style="list-style-type: decimal">
+<li><p>In your graphical interface, find the <code>hello.txt</code> file and double-click it.</p></li>
+<li><p>You can use the <code>cat</code> command from your shell also:</p>
+<pre><code>Michaels-MBP-3:magic michael$ cat hello.txt
+Hello World</code></pre></li>
+</ol>
+<p>Yay, you’ve created a file!</p>
+<h2 id="text-editor">Text editor</h2>
+<p>It would be pretty irritating to have to create all of our programs using <code>echo</code> like that. When we edit files, we usually use a program that’s specially designed for that. And for creating text files (like our programs are going to be), we use a <em>text editor</em>. Like programming languages, there are lots of different text editors. I’m going to recommend that you use a graphical text editor so you can use your mouse to move around the file and click on a button to save. There are also text-based editors (like Vim and Emacs), but we want to focus here on learning to program, not on how to use a text editor.</p>
+<p><strong>Exercise</strong> Alright, here’s your challenge: Open up a text editor on your computer. Type in the words <code>echo Hello World</code>. Now save it inside the <code>magic</code> directory you created in a file called <code>hello.sh</code> (the <code>.sh</code> file extension means “shell program”). Once you’ve done that, the file should appear in your file viewer, and typing <code>ls</code> in your terminal should show it. Finally, type <code>sh hello.sh</code> to ask the <code>sh</code> (shell) program to run your <code>hello.sh</code> program.</p>
+<p>If you’ve done all that, you’ve written your first, complete program. It doesn’t do much, but it’s something! Also, do you think it’s a little bit funny how you run the program? You ask one program to run another program. This kind of makes sense, if you remember what I said before: you’re righting in a programming language (shell) that the computer doesn’t understand, so you need to ask a <em>different</em> programming language to translate.</p>
+<p>This way of running is called an <em>interpreter</em>, because you’re running a program that interprets your commands and sends them to the computer. There’s another way of running, called <em>compiling</em>, where you ask a program called a compiler to translate your programming language into machine code. You then end up with a file in machine code that you can ask your computer to run directly.</p>
+<p>Don’t worry about this too much yet, treat it as a bit of magic, and eventually we’ll get to why you would do one or the other.</p>
+<h2 id="download-stack">Download Stack</h2>
+<p>OK, that was a lot of information that had very little to do with programming! The goal here is that you’re now comfortable with the terminal, the shell, and creating files and folders. Go ahead and play around with the terminal as much as you want. (<strong>Parent notice</strong> It’s probably a good idea to put your kids on their own accounts so they don’t accidentally delete your files.)</p>
+<p>For our final step today, we’re going to actually get the programs you need in order to write Haskell programs. There are a number of different programs you’ll end up needing. We’ll start right now with just one, Stack, which is a tool that will download everything else you need, and help you run your programs.</p>
+<p>You can install Stack by running this command. You can try copy-pasting into your terminal, or type it by hand. You may also need to ask your parent to type in the password for the computer:</p>
+<pre><code>curl -sSL https://get.haskellstack.org/ | sh</code></pre>
+<p>Oh, and if your parent is like me (or is me), you may already have Stack on the computer. If you want more information on getting Stack, check out the <a href="https://haskell-lang.org/get-started">Haskell Get Started page</a>. To make sure that Stack downloaded correctly, try running this:</p>
+<pre><code>Michaels-MBP-3:~ michael$ stack --version
+Version 1.4.1, Git revision 45e2ba52a08b235ef1a6421e73bbbe7255014796 (4759 commits) x86_64 hpack-0.17.0</code></pre>
+<p>You may see something a little bit different. The <code>--version</code> thing is a special argument to <code>stack</code> that means “tell me what your version number is.” Many programs accept a few special <em>flags</em> like <code>--version</code>. Another common one is <code>--help</code>. Try asking Stack for its help information that way.</p>
+<p>Stack still needs to download something called GHC (the Glasgow Haskell Compiler), which will do all of the real work. You can tell it to do that now (it will probably take a while, so this is a good place to stop the lesson). Run:</p>
+<pre><code>Michaels-MBP-3:~ michael$ stack setup --resolver lts-8.12</code></pre>
+<p>The <code>setup</code> argument is a command to Stack saying “set up all of the stuff I need to get to work.” You’ll see the <code>--resolver lts-8.12</code> quite a bit. For now, it’s magic. :)</p>
+<p>Good work today, you now know a lot more about how computers work than most adults in the world.</p>
+
+        </div>
+
+        <footer>
+            <div id="footer-hakyll">
+                Site proudly generated by
+                <a href="http://jaspervdj.be/hakyll">Hakyll</a>
+            </div>
+        </footer>
+
+        <script src="../../bower_components/jquery/dist/jquery.min.js"></script>
+        <script src="../../bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+        <script src="../../bower_components/highlight/src/highlight.pack.js"></script>
+    </body>
+</html>
