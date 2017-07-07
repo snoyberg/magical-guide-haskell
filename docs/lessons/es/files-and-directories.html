@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Magical Guide to Haskell</title>
+
+        <link rel="shortcut icon" type="image/png" href="../../img/favicon.png" />
+
+        <link rel="stylesheet" href="../../bower_components/bootstrap/dist/css/bootstrap.min.css" />
+        <link rel="stylesheet" href="../../css/default.css" />
+
+    </head>
+
+    <body>
+        <div id="content">
+            <div class="info">
+    Posted on 2017-06-28
+    
+</div>
+
+<h1 id="archivos-y-directorios">Archivos y Directorios</h1>
+<p>Tu computadora tiene que recordar muchas cosas. Todos esos programas que ejecuta deben estar en algún lado, cierto? Digamos que estas trabajando en un deber escolar y haces click en el botón de “guardar”, tu trabajo debe guardarse en algún lugar, cierto? La respuesta a esto se llama <em>archivos</em> y <em>directorios</em>. Los directorios también son conocidos como <em>carpetas</em>.</p>
+<p>Un archivo es algo que tiene un nombre y tiene información dentro. Los archivos se colocan dentro de directorios, que son como arboles donde organizas cosas. Podemos explorar un poco estos conceptos usando la shell. Por ejemplo, escribe <code>pwd</code> y presiona enter. <code>pwd</code> significa “Imprimir el directorio de trabajo actual” por sus siglas en ingles. <code>pwd</code> te dice en que directorio la shell está en este momento. En mi computadora, obtengo:</p>
+<pre><code>Michaels-MBP-3:~ michael$ pwd
+/Users/michael</code></pre>
+<p>Los símbolos llamados “slash” (<code>/</code>) son separadores: indican dónde cada nombre de directorio termina y empieza el siguiente. Esto significa que en mi computadora hay un directorio llamado <code>Users</code>. Dentro de él hay otro directorio llamado <code>michael</code>. Ese es el directorio donde estoy en este momento.</p>
+<p>También podemos ver que archivos y directorios existen en el directorio actual usando el comando <code>ls</code> (listar). Por ejemplo, esto es lo que tengo en mi directorio:</p>
+<pre><code>Michaels-MBP-3:~ michael$ ls
+Aplicaciones  Escritorio    Descargas  Libros     Musica     Publico
+Sonido        Documentos    Salud      Peliculas  Imagenes   dotfiles</code></pre>
+<p>Por lo general cuando haces esto en tu terminal, los directorios tendrán otro color para poder diferenciarlos. Puedes moverte de un directorio a otro usando el comando <code>cd</code> (cambiar directorio). Por ejemplo, puedo entrar al directorio <code>Documentos</code> con:</p>
+<pre><code>cd Documentos</code></pre>
+<p><strong>Truco</strong> Los programadores son muy ociosos y odian escribir demasiado con palabras completas. En la shell, puedes hacer algo llamado <em>completado con tab</em>, consiste en escribir el inicio de una palabra y luego presionar la tecla “tab” para completarlo. En mi computadora, puedo escribir <code>cd Doc</code> y luego presionar “tab” para que el comando se complete.</p>
+<p>Piensa que hará el comando <code>pwd</code> ahora que estoy dentro del directorio <code>Documentos</code>. ¿Lo adivinaste? Esto es lo que aparece:</p>
+<pre><code>Michaels-MBP-3:Documentos michael$ pwd
+/Users/michael/Documentos</code></pre>
+<p>Se parece mucho al anterior <code>/Users/michael</code>, solo que esta vez tiene el <code>Documentos</code> al final. Hemos entrado más profundo en el árbol de directorios. También puedo usar <code>ls</code> aquí:</p>
+<pre><code>Michaels-MBP-3:Documentos michael$ ls
+guia-magica-haskell</code></pre>
+<p>Oh, mira eso! Estoy trabajando en esta guia ahora mismo!</p>
+<p>Digamos que estoy aburrido de los documentos y quiero ir un paso arriba en el árbol de directorios a <code>/Users/michael</code>. Podria escribir <code>cd /Users/michael</code>. Pero hay una forma más rápida para esto: <code>cd ..</code> significa “ir un directorio arriba”.</p>
+<pre><code>Michaels-MBP-3:Documentos michael$ cd ..
+Michaels-MBP-3:~ michael$ pwd
+/Users/michael
+Michaels-MBP-3:~ michael$ ls
+Aplicaciones  Escritorio    Descargas  Libros     Musica     Publico
+Sonido        Documentos    Salud      Peliculas  Imagenes   dotfiles</code></pre>
+<p>Veamos como crear un nuevo directorio. Para que sea más fácil de ver, vamos a crearlo en el escritorio. Primero hacemos <code>cd Escritorio</code>, y luego usamos el comando <code>mkdir</code>, que significa “crear directorio”.</p>
+<pre><code>Michaels-MBP-3:~ michael$ cd Escritorio/
+Michaels-MBP-3:Escritorio michael$ mkdir magia
+Michaels-MBP-3:Escritorio michael$ ls
+magia
+Michaels-MBP-3:Escritorio michael$ cd magia</code></pre>
+<p>Intenta hacerlo tu mismo. Luego, intenta encontrar el directorio que creaste usando la interfaz gráfica. (Pide ayuda con esto si lo necesitas).</p>
+<p>Muy bien, estamos listos para crear un archivo. Primero, vamos a crear un archivo vació usando el comando <code>touch</code>. Asegúrate de estar dentro del directorio <code>magia</code> que creaste hace un momento. (Usa <code>pwd</code> para revisar, y <code>cd</code> para entrar en ese directorio si es necesario). Luego ejecuta:</p>
+<pre><code>Michaels-MBP-3:magia michael$ touch hola.txt
+Michaels-MBP-3:magia michael$ ls
+hola.txt</code></pre>
+<p>Ponemos <code>.txt</code> al final como la <em>extensión de archivo</em>, que nos ayuda a saber que es un archivo de texto. Este fichero es aburrido, sería genial si pudiéramos poner algo en él. Podemos hacerlo con el comando <code>echo</code>:</p>
+<pre><code>Michaels-MBP-3:magia michael$ echo Hola Mundo &gt; hola.txt</code></pre>
+<p>El símbolo <code>&gt;</code> significa “envía el resultado de este programa a este archivo”. ¿Pero cómo sabemos si funcionó? Bueno, podemos intentar dos cosas:</p>
+<ol style="list-style-type: decimal">
+<li><p>En tu interfaz gráfica, encuentra el archivo <code>hola.txt</code> y haz doble click sobre él.</p></li>
+<li><p>También puedes usar el comando <code>cat</code> en la shell:</p>
+<pre><code>Michaels-MBP-3:magia michael$ cat hola.txt
+Hola Mundo</code></pre></li>
+</ol>
+<p>Excelente, has creado un archivo!</p>
+<h2 id="editor-de-texto">Editor de Texto</h2>
+<p>Sería muy irritante tener que escribir nuestros programas usando <code>echo</code> como acabamos de hacer. Cuando editamos archivos, generalmente usamos algún programa especialmente diseñado para hacerlo. Cuando creamos archivos de texto (como será el caso de nuestros programas), usamos un <em>editor de texto</em>. De igual forma que los lenguajes de programación, existen muchos editores de texto diferentes. Te voy a recomendar que uses un editor de texto con interfaz gráfica para que puedas usar el ratón para moverte en el archivo y hacer click en un botón para guardar. También existen editores para la terminal (como Vim o Emcas), pero queremos enfocarnos en aprender a programar, no como usar un editor de texto.</p>
+<p><strong>Ejericio</strong> Muy bien, aquí está el reto: Abre un editor de texto en tu computadora. Escribe las palabras <code>echo Hola Mundo</code>. Guárdalo dentro del directorio <code>magia</code> en un archivo llamado <code>hola.sh</code> (la extensión <code>.sh</code> significa que es un programa para la shell). Cuando lo hayas hecho, el archivo debería aparecer en el visor de archivos, y escribir <code>ls</code> en la terminal debería mostrarlo. Finalmente escribe <code>sh hola.sh</code> para pedirle al programa <code>sh</code> (shell) que ejecute tu programa <code>hola.sh</code>.</p>
+<p>Si hiciste todo eso, acabas de escribir tu primer programa completo. No hace mucho, pero ya es un avance! Además, ¿no te parece que es divertido como ejecutas tu programa? Le pides a un programa que ejecute otro programa. Esto tiene sentido si recuerdas lo que dije antes: estas escribiendo en un lenguaje de programación (shell) que la computadora no entiende, así que necesitas pedirle a <em>otro</em> programa que lo traduzca.</p>
+<p>Esta forma de ejecutar programas se llama <em>interprete</em>, por que ejecutas un programa que interpreta tus comandos y se los envía a la computadora. Existe otra forma de ejecutar programas, llamada <em>compilación</em>, donde le pides a un programa llamado compilador que traduzca tu programa a lenguaje de máquina. El compilador te entrega un archivo con el código de máquina que tu computadora puede ejecutar directamente.</p>
+<p>No te preocupes mucho por esto ahora, míralo como si fuera magia, y eventualmente hablaremos sobre por que harías una cosa u otra.</p>
+<h2 id="descarga-stack">Descarga Stack</h2>
+<p>Muy bien, eso fue mucha información que no tiene mucho que ver con programar! El objetivo es que te sientas cómodo con la terminal, la shell, y creando archivos y directorios. Puedes jugar con la terminal todo lo que quieras. (<strong>Nota para padres</strong> Es una buena idea usar una cuenta personal para el niño, para evitar que los ficheros sean borrados accidentalmente).</p>
+<p>Para nuestro paso final, vamos a conseguir los programas que necesitamos para escribir programas en Haskell. Hay varios que necesitaremos. Pero por ahora vamos a empezar con solamente uno, Stack, que es una herramienta que descarga todo lo que necesitas, y te ayuda a ejecutar tus programas.</p>
+<p>Puedes instalar Stack ejecutando este comando. Puedes intentar copiándolo y pingado lo en tu terminal, o escribirlo a mano. También necesitaras pedir a un adulto que escriba la contraseña de la computadora:</p>
+<pre><code>curl -sSL https://get.haskellstack.org/ | sh</code></pre>
+<p>Si quieres saber más sobre Stack puedes ver la <a href="https://haskell-lang.org/get-started">Página para empezar con haskell</a>. Para asegurarte que Stack se descargó correctamente, ejecuta esto:</p>
+<pre><code>Michaels-MBP-3:~ michael$ stack --version
+Version 1.4.1, Git revision 45e2ba52a08b235ef1a6421e73bbbe7255014796 (4759 commits) x86_64 hpack-0.17.0</code></pre>
+<p>Es posible que veas algo un poco diferente. El argumento <code>--version</code> del programa <code>stack</code> significa “Dime cual es tu numero de versión”. Muchos programas aceptan algunas <em>banderas</em> especiales como <code>--version</code>. Otro muy común es <code>--help</code>, que te permite obtener ayuda sobre el uso de un programa. Intenta pedirle a Stack información de ayuda usando esa bandera.</p>
+<p>Stack aún necesita descargar algo llamado GHC (El compilador Glasgow de Haskell), que es el que hará todo el trabajo real. Puedes pedirle que haga eso ahora (probablemente tome algo de tiempo, así que es un buen momento para terminar esta lección). Ejecuta:</p>
+<pre><code>Michaels-MBP-3:~ michael$ stack setup --resolver lts-8.12</code></pre>
+<p>El argumento <code>setup</code> le pide a Stack que “configure todo lo que necesitamos para empezar a trabajar”. Verás la bandera <code>--resolver lts-8.12</code> varias veces. Por ahora, es solamente magia. :)</p>
+<p>Buen trabajo, ahora sabes mucho más sobre computadoras que la gran mayoría de adultos en todo el mundo.</p>
+
+        </div>
+
+        <footer>
+            <div id="footer-hakyll">
+                Site proudly generated by
+                <a href="http://jaspervdj.be/hakyll">Hakyll</a>
+            </div>
+        </footer>
+
+        <script src="../../bower_components/jquery/dist/jquery.min.js"></script>
+        <script src="../../bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+        <script src="../../bower_components/highlight/src/highlight.pack.js"></script>
+    </body>
+</html>
