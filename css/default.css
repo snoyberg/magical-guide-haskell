@@ -11,22 +11,48 @@ body {
 }
 
 #mgh-title {
-    margin-top: 50px;
     color: white;
-    font-size: 5.3em;
+    font-size: 5em;
     font-weight: bold;
+    margin-top: 50px;
     text-align: center;
 }
 
 #laptop {
     margin-left: 20px;
     position: relative;
-    width: 100%;
     top: 40px;
+    width: 100%;
+}
+
+@media screen and (max-width: 768px) {
+    #mgh-title {
+        font-size: 4em;
+        margin-top: 30px;
+    }
+
+    #laptop {
+        margin: 0px;
+        padding: 20px;
+        position: unset;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    #mgh-title {
+        font-size: 2em;
+        margin-top: 10px;
+    }
 }
 
 #main-content {
     margin-top: 100px;
+}
+
+@media screen and (max-width: 1150px) {
+    #main-content {
+        margin-top: 40px;
+    }
 }
 
 #description {
