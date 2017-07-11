@@ -15,12 +15,15 @@
 
     <body>
         <div id="content">
-            <div class="info">
-    Posted on 2017-06-28
-    
-</div>
+            <div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      <div class="info">
+          Posted on 2017-06-28
+          
+      </div>
 
-<h1 id="files-and-directories">Files and directories</h1>
+      <h1 id="files-and-directories">Files and directories</h1>
 <p>Your computer has to remember a lot of things. All of those programs that it runs need to get put somewhere, right? And let’s say you’re working on a school project and hit the “save” button, it gets put somewhere, right? The answer to all of this is called <em>files</em> and <em>directories</em>. Directories are also known as <em>folders</em>.</p>
 <p>A file is something that has a name and has some stuff inside of it. Files get placed inside directories, which are kind of like trees where you can organized things. We can explore this a little bit inside the shell. For example, type in <code>pwd</code> and hit enter. <code>pwd</code> stands for “print working directory,” and it tells you what directory your shell is working in right now. On my computer, I see:</p>
 <pre><code>Michaels-MBP-3:~ michael$ pwd
@@ -87,6 +90,17 @@ Version 1.4.1, Git revision 45e2ba52a08b235ef1a6421e73bbbe7255014796 (4759 commi
 <pre><code>Michaels-MBP-3:~ michael$ stack setup --resolver lts-8.12</code></pre>
 <p>The <code>setup</code> argument is a command to Stack saying “set up all of the stuff I need to get to work.” You’ll see the <code>--resolver lts-8.12</code> quite a bit. For now, it’s magic. :)</p>
 <p>Good work today, you now know a lot more about how computers work than most adults in the world.</p>
+<h2 id="exercises">Exercises</h2>
+<ol style="list-style-type: decimal">
+<li>What is 83 times 23?</li>
+<li>Try running <code>date &gt; date.txt</code>. What happened?</li>
+<li>Also run <code>echo Goodbye &gt; goodbye.txt</code>. Do you see a pattern?</li>
+<li>Try running <code>cat date.txt goodbye.txt</code>.</li>
+<li>What do you think you’ll see if you run <code>cat goodbye.txt date.txt</code>?</li>
+</ol>
+    </div>
+  </div>
+</div>
 
         </div>
 
