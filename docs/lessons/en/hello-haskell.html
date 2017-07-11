@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Magical Guide to Haskell</title>
+
+        <link rel="shortcut icon" type="image/png" href="../../img/favicon.png" />
+
+        <link rel="stylesheet" href="../../bower_components/bootstrap/dist/css/bootstrap.min.css" />
+        <link rel="stylesheet" href="../../css/default.css" />
+
+    </head>
+
+    <body>
+        <div id="content">
+            <div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      <div class="info">
+          Posted on 2017-07-11
+          
+      </div>
+
+      <h1 id="hello-haskell">Hello Haskell</h1>
+<p>This is a magical guide to Haskell. So let’s do some Haskell! Remember that Haskell is a language that we’re going to use to tell the computer what we want it to do, and we’re going to use a program to translate Haskell into something the computer itself understands.</p>
+<p>There’s an old tradition of starting a new language with “Hello World”, and we’ll do the same thing here. Create a new file called <code>Main.hs</code>. There’s nothing magical about the word “Main” here, it’s just a convention (meaning, something people usually do). The <code>.hs</code> at the end is the way we identify that the file has Haskell code in it.</p>
+<p>Now, type in exactly this content to your file and save it:</p>
+<div class="sourceCode"><pre class="sourceCode haskell"><code class="sourceCode haskell">main <span class="fu">=</span> putStrLn <span class="st">&quot;Hello World&quot;</span></code></pre></div>
+<p>Now you can run the program with this command:</p>
+<pre><code>stack runghc Main.hs</code></pre>
+<p>Make sure you run it in the same directory that you saved your file. What happened?</p>
+<p><strong>Exercise</strong> Try making another file called <code>hello.hs</code> with the same content. What do you think you need to type into the terminal to run that file?</p>
+<h2 id="understanding-hello-world">Understanding Hello World</h2>
+<p>The first thing in our program is <code>main =</code>. Every Haskell program starts running in an action called <code>main</code>, and we’re saying what <code>main</code> is here. (And yes, this is sort of why we called our file <code>Main.hs</code>.) Our <em>definition</em> of the main action is on the right hand side of the equals sign.</p>
+<p><code>putStrLn</code> looks confusing, but it means “put a string line.” For now, treat that “line” bit as magic (though we’ll explain it in the exercises at the end of this lesson). A <em>string</em> in a computer is a bunch of letters, numbers, and other characters put together. We usually write them in our programs inside <code>&quot;</code>, or double quotes. And that’s exactly what <code>&quot;Hello World&quot;</code> is: a string! And we want to put it in the terminal. Throwing that all together: <code>putStrLn</code> :).</p>
+<p>OK, so now we know what <code>putStrLn</code> means, but what <em>is</em> it. This is our first <em>function</em>. Functions are things that take some input and produce output. <code>putStrLn</code> is a function which takes a string as input, and produces an <em>action</em> as output. That action will put the string in the terminal.</p>
+<p>That’s it, you’ve written your first Haskell program. You’re well on your way to being a programmer!</p>
+<h2 id="numbers">Numbers</h2>
+<p>Dealing with strings and words and stuff is nice. But computers are all about numbers. Can we do something with numbers? This next program is <em>not</em> going to work, but we’re going to try it anyway:</p>
+<div class="sourceCode"><pre class="sourceCode haskell"><code class="sourceCode haskell">main <span class="fu">=</span> putStrLn <span class="dv">5</span></code></pre></div>
+<p>Try putting that in <code>Main.hs</code> and run it again with <code>stack runghc Main.hs</code>. (That’s the last time I’ll tell you to do that; from now on, after I give you some code, you should run it like that.) You’ll see an error message. This is the program telling you “you’re not speaking Haskell correctly, let me try to help you.” Here’s the important part:</p>
+<pre><code>No instance for (Num String) arising from the literal ‘5’</code></pre>
+<p>That word “instance” is magic for now, don’t worry about it. “Literal” is just the way we talk about numbers that appear inside your program directly. The interesting part is “Num String.” Think about two questions:</p>
+<ol style="list-style-type: decimal">
+<li>What kind of input did we say the <code>putStrLn</code> function takes?</li>
+<li>Is the number 5 a string?</li>
+</ol>
+<p>The answer is that <code>putStrLn</code> needs a string, but 5 is <em>not</em> a string. The GHC program is telling you that it doesn’t know how to run the commands you gave it. A person would probably be able to figure it out and turn that number 5 into a string 5. But remember: <em>computers are dumb</em>. They need to be told exactly what to do.</p>
+<p>We need to tell GHC with our code how to turn 5 into a string. There’s another function for that, called <code>show</code>. We want to throw that in here too. You might think it would look like this:</p>
+<div class="sourceCode"><pre class="sourceCode haskell"><code class="sourceCode haskell">main <span class="fu">=</span> putStrLn show <span class="dv">5</span></code></pre></div>
+<p>Now we have two functions. We want to feed <code>5</code> into <code>show</code>, and get the output from <code>show</code> and feed it into <code>putStrLn</code>. But our code above doesn’t say that: it says “feed both <code>show</code> and <code>5</code> into <code>putStrLn</code>”, which doesn’t make any sense. We need to help GHC again (because it’s dumb).</p>
+<p>We use something called <em>parentheses</em> to do this. This looks like:</p>
+<div class="sourceCode"><pre class="sourceCode haskell"><code class="sourceCode haskell">main <span class="fu">=</span> putStrLn (show <span class="dv">5</span>)</code></pre></div>
+<p>This says “I want the output from <code>show 5</code> to go into <code>putStrLn</code>”, which is exactly what we want.</p>
+<p>Don’t worry if parentheses seem a little confusing right now, with a little bit of practice it will all make a lot more sense.</p>
+<h2 id="exercises">Exercises</h2>
+<ol style="list-style-type: decimal">
+<li>Try using <code>putStr</code> instead of <code>putStrLn</code> in the “Hello World” example. What’s different in the output? What do you think the “line” in <code>putStrLn</code> means?</li>
+<li>Instead of <code>5</code>, try putting in <code>(6 + 7)</code>. What happens? (Is Haskell a good calculator?)</li>
+</ol>
+    </div>
+  </div>
+</div>
+
+        </div>
+
+        <footer>
+            <div id="footer-hakyll">
+                Site proudly generated by
+                <a href="http://jaspervdj.be/hakyll">Hakyll</a>
+            </div>
+        </footer>
+
+        <script src="../../bower_components/jquery/dist/jquery.min.js"></script>
+        <script src="../../bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+        <script src="../../bower_components/highlight/src/highlight.pack.js"></script>
+    </body>
+</html>
