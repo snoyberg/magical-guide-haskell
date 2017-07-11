@@ -204,3 +204,11 @@ quite a bit. For now, it's magic. :)
 
 Good work today, you now know a lot more about how computers work than
 most adults in the world.
+
+## Exercises
+
+1. What is 83 times 23?
+2. Try running `date > date.txt`. What happened?
+3. Also run `echo Goodbye > goodbye.txt`. Do you see a pattern?
+4. Try running `cat date.txt goodbye.txt`.
+5. What do you think you'll see if you run `cat goodbye.txt date.txt`?
