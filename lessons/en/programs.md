@@ -176,3 +176,37 @@ want to use them. So instead, we usually write programs into
 files. Which brings us to our next section...
 
 __Exercise__ Can you get the terminal to tell you what 43 times 22 is?
+
+## How the shell looks
+
+You may have noticed that when you type things into the shell, it
+already says something on the screen. On my computer, it looks
+something like this:
+
+```
+Michaels-MBP-3:~ michael$
+```
+
+This is called the _prompt_, and it tells you some things, like the
+name of the computer you're on, and the name of the user. You don't
+need to worry about that stuff. Everything up until that dollar sign
+(`$`) is just information you can ignore.
+
+A lot of the time, you'll see instructions that look like this:
+
+```
+$ echo Hello World
+```
+
+You don't actually type in the dollar sign; it's just there to tell
+you that that's a line you type in your shell after the prompt. This
+makes more sense when you see it with the output:
+
+```
+$ echo Hello World
+Hello World
+```
+
+Because the first line starts with a dollar sign, I know that it's
+what I typed in. And since the second line doesn't, I know it's what
+the shell says back to me.
