@@ -15,12 +15,14 @@
 
     <body>
         <div id="content">
-            <div class="info">
-    Posted on 2017-06-28
-    
-</div>
-
-<h1 id="programs">Programs</h1>
+            <div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      <div class="info">
+          Posted on 2017-06-28
+          
+      </div>
+      <h1 id="programs">Programs</h1>
 <p>Computers are dumb. Sure, they can do some things that we mere humans can barely understand. For example, they can multiply the numbers 159374930 and 43849593 faster than you can read the answer. They can perfectly remember the words in millions of books, while we humans can have trouble memorizing a single page of “Cat in the Hat.”</p>
 <p>But that doesn’t make computers smart. They do exactly what they’re told, and nothing more. If you tell a human “walk to the store and buy a loaf of bread,” the human will figure out that you need to put your shoes on, grab some money, look both ways before crossing the street, and actually bring the bread home after you buy it. A computer would need to be told each and every one of those things.</p>
 <p>To make it worse, computers don’t speak English. They don’t speak Chinese. They don’t speak <em>any</em> human language. They speak something called machine code, which is just a bunch of ones and zeros (also known as <em>binary</em>). Machine code just does boring things like “add two numbers together” or “load up some information from your memory.” And we humans don’t much like dealing with those boring details, much less deal with them in ones and zeros. We like to think in words and bigger concepts.</p>
@@ -61,6 +63,19 @@
 <p>In this magical guide, we’ll be talking about a programming language called Haskell. Since this will be the first programming language you learn, I’m not going to tell you what makes it different than other languages, because that would just be confusing. Treat it as another piece of magic for now. After you’ve learned Haskell, you can learn other languages and see how they’re different, just like how once you know English, you can learn Hebrew and see how different it is (weird! the letters go right to left instead of left to right!).</p>
 <p>With shell, I said you could write some simple programs right in the terminal. But if we want to write real programs, we probably don’t want to have to type the whole program in on a terminal each time we want to use them. So instead, we usually write programs into files. Which brings us to our next section…</p>
 <p><strong>Exercise</strong> Can you get the terminal to tell you what 43 times 22 is?</p>
+<h2 id="how-the-shell-looks">How the shell looks</h2>
+<p>You may have noticed that when you type things into the shell, it already says something on the screen. On my computer, it looks something like this:</p>
+<pre><code>Michaels-MBP-3:~ michael$</code></pre>
+<p>This is called the <em>prompt</em>, and it tells you some things, like the name of the computer you’re on, and the name of the user. You don’t need to worry about that stuff. Everything up until that dollar sign (<code>$</code>) is just information you can ignore.</p>
+<p>A lot of the time, you’ll see instructions that look like this:</p>
+<pre><code>$ echo Hello World</code></pre>
+<p>You don’t actually type in the dollar sign; it’s just there to tell you that that’s a line you type in your shell after the prompt. This makes more sense when you see it with the output:</p>
+<pre><code>$ echo Hello World
+Hello World</code></pre>
+<p>Because the first line starts with a dollar sign, I know that it’s what I typed in. And since the second line doesn’t, I know it’s what the shell says back to me.</p>
+    </div>
+  </div>
+</div>
 
         </div>
 
