@@ -59,3 +59,70 @@ terminal.
 
 Eso es todo, acabas de escribir tu primer programa en Haskell. Vas muy bien en
 tu camino de convertirte en un programador!
+
+## Números
+
+Usar cadenas de texto y palabras está bien. Pero las computadoras son muy buenas
+con los números. ¿Podemos hacer algo con los números? El siguiente programa _no_
+va a funcionar, pero lo vamos a intentar de cualquier forma.
+
+```haskell
+main = putStrLn 5
+```
+
+Intenta poner esto en `Main.hs` y ejecútalo nuevamente con `stack runghc
+Main.hs`. (Esta es la ultima vez que te digo esto. Desde ahora, cuando te
+muestre código, ya sabrás que debes ejecutarlo de esa forma). Veras un mensaje
+de error. Es el programa diciéndote "no estás escribiendo Haskell de forma
+correcta, déjame ayudarte". Esta es la parte importante:
+
+```
+No instance for (Num String) arising from the literal ‘5’
+```
+
+La palabra "instance" es magia por ahora, no te preocupes de eso. "Literal" es
+solamente como llamamos a los números que aparecen de forma directa en nuestro
+programa. La parte interesante es "Num String". Piensa en estas dos preguntas:
+
+1. ¿Qué tipo de entrada habíamos dicho que `putStrLn` recibe?
+2. ¿Es el numero 5 una cadena de texto?
+
+La respuesta es que `putStrLn` necesita una cadena de texto, pero 5 _no_ es una
+cadena. El programa GHC te está diciendo que que no sabe como ejecutar los
+comandos que le diste. Las personas pueden darse cuenta que se debería convertir
+ese numero 5 en una cadena de texto "5". Pero recuerda: _las computadoras son
+tontas_. Necesitan que se les diga exactamente que hacer.
+
+Necesitamos decirle a GHC como convertir el numero 5 en una cadena de texto.
+Existe otra función para eso, llamada `show` (que significa "mostrar" en
+inglés). Así que necesitamos agregar eso también. Podrías pensar que sería algo
+como esto:
+
+```haskell
+main = putStrLn show 5
+```
+
+Ahora tenemos dos funciones. Queremos poner `5` en la función `show`, y obtener
+el resultado de `show` para ponerlo en `putStrLn`. Pero ese código no dice eso,
+en realidad dice "pon `show` y `5` al mismo tiempo en `putStrLn`", y esto no
+tiene ningún sentido. Necesitemos ayudar a GHC otra vez (por que es tonto).
+
+Usamos algo llamado _paréntesis_ para hacer esto. Luce así:
+
+```haskell
+main = putStrLn (show 5)
+```
+
+Esto dice "Quiero que el resultado de `show 5` se use como entrada de
+`putStrLn`", que es exactamente lo que queremos.
+
+No te preocupes si los paréntesis se ven algo confusos ahora, con un poco de
+práctica todo te resultará muy sencillo de comprender.
+
+## Ejercicios
+
+1. Intenta usar `putStr` en lugar de `putStrLn` en el ejemplo "Hola Mundo".
+   ¿Cuál es la diferencia en el resultado? ¿Qué crees que significa aquello de
+   "linea" en `putStrLn`?
+2. En lugar de `5`, intenta poner `(6 + 7)`. ¿Qué ocurre? (¿Crees que Haskell es
+   una buena calculadora?)
