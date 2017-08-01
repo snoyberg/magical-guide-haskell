@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Magical Guide to Haskell</title>
+
+        <link rel="shortcut icon" type="image/png" href="../../img/favicon.png" />
+
+        <link rel="stylesheet" href="../../bower_components/bootstrap/dist/css/bootstrap.min.css" />
+        <link rel="stylesheet" href="../../css/default.css" />
+
+    </head>
+
+    <body>
+        <div id="content">
+            <div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      <div class="info">
+          Posted on 2017-07-11
+          
+      </div>
+      <h1 id="hola-haskell">Hola Haskell</h1>
+<p>Esta es una guia mágica de Haskell. Así que usemos Haskell! Recuerda que Haskell es un lenguaje que usaremos para decirle a la computadora que hacer, y vamos a usar un programa para traducir Haskell a algo que la computadora pueda comprender.</p>
+<p>Existe una vieja tradición de empezar a usar un nuevo lenguaje con un programa que dice “Hola Mundo”, así que haremos lo mismo aquí. Crea un nuevo fichero llamado <code>Main.hs</code>. No hay nada mágico en el nombre “Main”, es solamente una convención, algo que las personas hacen generalmente por que “main”, en inglés, significa “principal”. El <code>.hs</code> al final es la forma de identificar que el fichero contiene código Haskell dentro.</p>
+<p>Ahora, escribe exactamente este contenido en tu fichero y guárdalo:</p>
+<div class="sourceCode"><pre class="sourceCode haskell"><code class="sourceCode haskell">main <span class="fu">=</span> putStrLn <span class="st">&quot;Hola Mundo&quot;</span></code></pre></div>
+<p>Ahora puedes ejecutar el programa con este comando:</p>
+<pre><code>stack runghc Main.hs</code></pre>
+<p>Asegúrate de ejecutarlo en el mismo directorio en el que guardaste tu fichero. ¿Qué ocurrió?</p>
+<p><strong>Ejercicio</strong> Intenta crear otro fichero llamado <code>hello.hs</code> con el mismo contenido. ¿Qué crees que necesitas escribir en la terminal para ejecutar ese fichero?</p>
+<h2 id="comprendiendo-el-programa-hola-mundo">Comprendiendo el programa Hola Mundo</h2>
+<p>Lo primero que encontramos en nuestro programa es <code>main =</code>. Todo programa Haskell empieza ejecutando una acción llamada <code>main</code> (que significa “principal” en inglés), y estamos indicando que <code>main</code> empieza aquí. (Si, es por esta misma razón que también llamamos <code>Main.hs</code> a nuestro fichero). Nuestra <em>definición</em> de la acción <code>main</code> está en el lado derecho del signo igual.</p>
+<p><code>putStrLn</code> luce algo confuso, pero significa “poner una cadena en linea”. Por ahora, considera que lo de “linea” es magia (lo explicaremos luego en los ejercicios). Una <em>cadena</em> de texto en una computadora son un grupo de letras, números, y otros símbolos juntos. Generalmente las escribimos en nuestros programas dentro de comillas <code>&quot;</code>. Eso es exactamente lo que es <code>&quot;Hola Mundo&quot;</code>: una cadena! Y queremos ponerla en la terminal, así que usamos <code>putStrLn</code> :).</p>
+<p>OK, ahora sabemos que es <code>putStrLn</code>, pero ¿qué <em>es</em>?. Esta es nuestra primera <em>función</em>. Las funciones son cosas que toman datos de entrada y producen datos de salida. <code>putStrLn</code> es una función que toma una cadena de texto como entrada y produce una <em>acción</em> como salida. Esa acción escribirá la cadena de texto en la terminal.</p>
+<p>Eso es todo, acabas de escribir tu primer programa en Haskell. Vas muy bien en tu camino de convertirte en un programador!</p>
+<h2 id="números">Números</h2>
+<p>Usar cadenas de texto y palabras está bien. Pero las computadoras son muy buenas con los números. ¿Podemos hacer algo con los números? El siguiente programa <em>no</em> va a funcionar, pero lo vamos a intentar de cualquier forma.</p>
+<div class="sourceCode"><pre class="sourceCode haskell"><code class="sourceCode haskell">main <span class="fu">=</span> putStrLn <span class="dv">5</span></code></pre></div>
+<p>Intenta poner esto en <code>Main.hs</code> y ejecútalo nuevamente con <code>stack runghc Main.hs</code>. (Esta es la ultima vez que te digo esto. Desde ahora, cuando te muestre código, ya sabrás que debes ejecutarlo de esa forma). Veras un mensaje de error. Es el programa diciéndote “no estás escribiendo Haskell de forma correcta, déjame ayudarte”. Esta es la parte importante:</p>
+<pre><code>No instance for (Num String) arising from the literal ‘5’</code></pre>
+<p>La palabra “instance” es magia por ahora, no te preocupes de eso. “Literal” es solamente como llamamos a los números que aparecen de forma directa en nuestro programa. La parte interesante es “Num String”. Piensa en estas dos preguntas:</p>
+<ol style="list-style-type: decimal">
+<li>¿Qué tipo de entrada habíamos dicho que <code>putStrLn</code> recibe?</li>
+<li>¿Es el numero 5 una cadena de texto?</li>
+</ol>
+<p>La respuesta es que <code>putStrLn</code> necesita una cadena de texto, pero 5 <em>no</em> es una cadena. El programa GHC te está diciendo que que no sabe como ejecutar los comandos que le diste. Las personas pueden darse cuenta que se debería convertir ese numero 5 en una cadena de texto “5”. Pero recuerda: <em>las computadoras son tontas</em>. Necesitan que se les diga exactamente que hacer.</p>
+<p>Necesitamos decirle a GHC como convertir el numero 5 en una cadena de texto. Existe otra función para eso, llamada <code>show</code> (que significa “mostrar” en inglés). Así que necesitamos agregar eso también. Podrías pensar que sería algo como esto:</p>
+<div class="sourceCode"><pre class="sourceCode haskell"><code class="sourceCode haskell">main <span class="fu">=</span> putStrLn show <span class="dv">5</span></code></pre></div>
+<p>Ahora tenemos dos funciones. Queremos poner <code>5</code> en la función <code>show</code>, y obtener el resultado de <code>show</code> para ponerlo en <code>putStrLn</code>. Pero ese código no dice eso, en realidad dice “pon <code>show</code> y <code>5</code> al mismo tiempo en <code>putStrLn</code>”, y esto no tiene ningún sentido. Necesitemos ayudar a GHC otra vez (por que es tonto).</p>
+<p>Usamos algo llamado <em>paréntesis</em> para hacer esto. Luce así:</p>
+<div class="sourceCode"><pre class="sourceCode haskell"><code class="sourceCode haskell">main <span class="fu">=</span> putStrLn (show <span class="dv">5</span>)</code></pre></div>
+<p>Esto dice “Quiero que el resultado de <code>show 5</code> se use como entrada de <code>putStrLn</code>”, que es exactamente lo que queremos.</p>
+<p>No te preocupes si los paréntesis se ven algo confusos ahora, con un poco de práctica todo te resultará muy sencillo de comprender.</p>
+<h2 id="ejercicios">Ejercicios</h2>
+<ol style="list-style-type: decimal">
+<li>Intenta usar <code>putStr</code> en lugar de <code>putStrLn</code> en el ejemplo “Hola Mundo”. ¿Cuál es la diferencia en el resultado? ¿Qué crees que significa aquello de “linea” en <code>putStrLn</code>?</li>
+<li>En lugar de <code>5</code>, intenta poner <code>(6 + 7)</code>. ¿Qué ocurre? (¿Crees que Haskell es una buena calculadora?)</li>
+</ol>
+    </div>
+  </div>
+</div>
+
+        </div>
+
+        <footer>
+            <div id="langs">
+                <a href="../../">English</a>
+                |
+                <a href="../../es">Español</a>
+            </div>
+
+            <div id="footer-hakyll">
+                Site proudly generated by
+                <a href="http://jaspervdj.be/hakyll">Hakyll</a>
+            </div>
+        </footer>
+
+        <script src="../../bower_components/jquery/dist/jquery.min.js"></script>
+        <script src="../../bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+        <script src="../../bower_components/highlight/src/highlight.pack.js"></script>
+    </body>
+</html>
