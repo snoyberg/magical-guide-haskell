@@ -171,3 +171,36 @@ siguiente sección...
 
 __Ejericio__ ¿Puedes hacer que la terminal te diga cuanto es 43 multiplicado por
 22? (puedes usar un _*_ como símbolo de multiplicación).
+
+## El aspecto de la shell
+
+Quizás notaste que cuando escribes cosas en la shell, esta tiene algo escrito de
+antemano. En mi computadora, se ve algo como esto:
+
+```
+Michaels-MBP-3:~ michael$
+```
+
+Esto se llama el _prompt_, y te dice algunas cosas como: el nombre de la
+computadora en la que estás trabajando, y el nombre del usuario. No necesitas
+preocuparte por estas cosas. Todo lo que está antes del signo dolar (`$`) es
+solamente información que puedes ignorar.
+
+Varias veces encontrarás instrucciones que lucen algo así:
+
+```
+$ echo Hola Mundo
+```
+
+No necesitas escribir el signo dolar, solamente está ahí para indicarte que esto
+es una linea que escribes en la shell luego del prompt. Esto tiene más sentido
+cuando lo ves con el resultado:
+
+```
+$ echo Hola Mundo
+Hola Mundo
+```
+
+Como la primera linea inicia con el signo dolar, puedo saber que eso es lo que
+debo escribir. Y como la segunda linea no lo tiene, puedo saber que es lo que la
+shell me responde.
