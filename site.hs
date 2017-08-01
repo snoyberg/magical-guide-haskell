@@ -30,22 +30,38 @@ main = hakyllWith config $ do
             >>= loadAndApplyTemplate "templates/default.html" defaultContext
             >>= relativizeUrls
 
-    match "index.html" $ do
-        route idRoute
-        compile $ do
-            posts <- recentFirst =<< loadAll "lessons/**"
-            let indexCtx =
-                    listField "posts" defaultContext (return posts) `mappend`
-                    constField "title" "Home"                `mappend`
-                    defaultContext
-
-            getResourceBody
-                >>= applyAsTemplate indexCtx
-                >>= loadAndApplyTemplate "templates/default.html" indexCtx
-                >>= relativizeUrls
+    matchIndex EN
+    matchIndex ES
 
     match "templates/*" $ compile templateBodyCompiler
 
 
+matchIndex :: Lang -> Rules ()
+matchIndex lang = match (index lang) $ do
+    route idRoute
+    compile $ do
+        posts <- recentFirst =<< loadAll (lessons lang)
+        let indexCtx =
+                listField "posts" defaultContext (return posts) `mappend`
+                constField "title" "Home"                `mappend`
+                defaultContext
+        getResourceBody
+            >>= applyAsTemplate indexCtx
+            >>= loadAndApplyTemplate "templates/default.html" indexCtx
+            >>= relativizeUrls
+
 config :: Configuration
 config = defaultConfiguration { destinationDirectory = "docs" }
+
+data Lang = EN | ES
+
+class LangAssets a where
+    index :: a -> Pattern
+    lessons :: a -> Pattern
+
+instance LangAssets Lang where
+    index EN = "index.html"
+    index ES = "es/index.html"
+
+    lessons EN = "lessons/en/**"
+    lessons ES = "lessons/es/**"
