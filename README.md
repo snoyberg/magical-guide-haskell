@@ -1,5 +1,7 @@
 # Magical Guide to Haskell
 
+https://snoyberg.github.io/magical-guide-haskell/
+
 This is a guide to programming with the
 [Haskell programming language](https://haskell-lang.org/) that I'm
 writing for my nine year old son. I'm putting it in a public Git repo
