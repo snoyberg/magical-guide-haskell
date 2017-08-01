@@ -40,7 +40,7 @@ matchIndex :: Lang -> Rules ()
 matchIndex lang = match (index lang) $ do
     route idRoute
     compile $ do
-        posts <- recentFirst =<< loadAll (lessons lang)
+        posts <- chronological =<< loadAll (lessons lang)
         let indexCtx =
                 listField "posts" defaultContext (return posts) `mappend`
                 constField "title" "Home"                `mappend`
