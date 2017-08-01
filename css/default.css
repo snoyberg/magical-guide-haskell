@@ -86,6 +86,14 @@ h2 {
     font-size: 50px;
 }
 
+#langs {
+    margin-bottom: 10px;
+}
+
+#langs a {
+    color: white;
+}
+
 
 footer {
     background-color: #453b61;
